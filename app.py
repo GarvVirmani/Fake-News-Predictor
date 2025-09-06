@@ -3,8 +3,14 @@
 import streamlit as st
 import joblib
 import re
+import nltk   # <-- Added
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+
+# ----------------------------
+# Download NLTK stopwords at runtime (needed on Streamlit Cloud)
+# ----------------------------
+nltk.download('stopwords')  # <-- Added
 
 # ----------------------------
 # 1. Load trained model & vectorizer
