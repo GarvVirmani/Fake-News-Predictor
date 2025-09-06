@@ -37,7 +37,7 @@ def clean_text(text):
 # ----------------------------
 # 4. Streamlit UI layout
 # ----------------------------
-st.set_page_config(page_title="Fake News Detector", layout="wide")
+st.set_page_config(page_title="Fake News Predictor", layout="wide")
 
 # Custom styling for better look
 st.markdown("""
