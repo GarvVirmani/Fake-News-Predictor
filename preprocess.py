@@ -29,7 +29,7 @@ def clean_text(text):
     # list comprehension with preloaded stop_words
     words = [port_stem.stem(word) for word in words if word not in stop_words]
     return ' '.join(words)
-
+    
 # apply preprocessing
 df['content'] = df['content'].apply(clean_text)
 

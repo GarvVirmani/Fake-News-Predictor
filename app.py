@@ -50,7 +50,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("📰 Fake News Detector")
+st.title("📰 Fake News Predictor")
 st.write("Enter a news **Title** and **Text** below to predict whether it is REAL or FAKE.")
 
 # Input fields
