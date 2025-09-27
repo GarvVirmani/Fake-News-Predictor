@@ -315,19 +315,20 @@ if st.button("Detect News"):
 
         # Determine final verdict & source
         gemini_upper = gemini_response.upper()
-        if ("REAL" in gemini_upper and ml_result.startswith("REAL")) or ("FAKE" in gemini_upper and ml_result.startswith("FAKE")):
+        print(gemini_upper)
+        if (gemini_upper.startswith("REAL.") and ml_result.startswith("REAL")) or (gemini_upper.startswith("FAKE.") and ml_result.startswith("FAKE")):
             final_verdict = ml_result
             source = "ML + LLM"
-        elif "REAL" in gemini_upper or "FAKE" in gemini_upper:
+        elif gemini_upper.startswith("REAL.") or gemini_upper.startswith("FAKE."):
             # LLM disagrees with ML → trust LLM only
-            if "REAL" in gemini_upper:
+            if gemini_upper.startswith("REAL."):
                 final_verdict = "REAL 🟢"
             else:
                 final_verdict = "FAKE 🔴"
             source = "LLM only"
         else:
             # LLM unclear → fallback to ML only
-            final_verdict = ml_result
+            final_verdict = "NOT CLEAR"
             source = "ML only"
 
         st.markdown(f"🧠 **Final Verdict:** {final_verdict}")
