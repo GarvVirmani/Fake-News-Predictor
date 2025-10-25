@@ -18,7 +18,7 @@ port_stem = PorterStemmer()
 stop_words = set(stopwords.words('english'))
 
 # Your Google Gemini API key here
-GEMINI_API_KEY = "AIzaSyAGs5iz7mpNIC_dxEcgA1Ugscf7HSHrGz4"
+GEMINI_API_KEY = "AIzaSyBuAD0Mz3nYm9aBi1HHh_SBGiYPE6NmXwA"
 
 # Text preprocessing function
 def clean_text(text):
