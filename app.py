@@ -310,7 +310,7 @@ if st.button("Detect News"):
             ml_result = "REAL 🟢" if ml_pred == 0 else "FAKE 🔴"
 
             # Query Gemini LLM with Google Search tool enabled
-            gemini_prompt = f"Is the following news real or fake? Please answer with REAL or FAKE and provide a short explanation: Also give sources clickable links \n\n{content}"
+            gemini_prompt = f"Is the following news real or fake? Please answer always first word with REAL. or FAKE. and provide a short explanation: Also give sources always clickable links \n\n{content}"
             gemini_response = query_gemini_api(gemini_prompt).strip()
 
         # Determine final verdict & source
