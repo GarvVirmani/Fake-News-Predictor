@@ -18,7 +18,7 @@ port_stem = PorterStemmer()
 stop_words = set(stopwords.words('english'))
 
 # Your Google Gemini API key here
-GEMINI_API_KEY = "AIzaSyBuAD0Mz3nYm9aBi1HHh_SBGiYPE6NmXwA"
+GEMINI_API_KEY = "AIzaSyBZ8ZL8SMDwt4ELDxkloCntrPdssNixSMc"
 
 # Text preprocessing function
 def clean_text(text):
@@ -310,7 +310,7 @@ if st.button("Detect News"):
             ml_result = "REAL 🟢" if ml_pred == 0 else "FAKE 🔴"
 
             # Query Gemini LLM with Google Search tool enabled
-            gemini_prompt = f"Is the following news real or fake? Please answer always first word with REAL. or FAKE. and provide a short explanation: Also give sources always clickable links \n\n{content}"
+            gemini_prompt = f"Is the following news real or fake? Please answer always first word with REAL. or FAKE. and provide a short explanation: Also give sources always clickable links \n DON'T FORGET first word REAL. OR FAKE.(DOT ALSO) AND EXPLANATION SOURCES LINKS alwayssssss  \n{content}"
             gemini_response = query_gemini_api(gemini_prompt).strip()
 
         # Determine final verdict & source
